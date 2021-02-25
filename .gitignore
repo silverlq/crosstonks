@@ -1,3 +1,4 @@
 *.vs
 *.pyc
 */downloaded_data/
+potentialSymbols.csv

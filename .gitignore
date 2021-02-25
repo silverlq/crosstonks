@@ -1,0 +1,3 @@
+*.vs
+*.pyc
+*/downloaded_data/

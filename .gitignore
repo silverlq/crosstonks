@@ -1,4 +1,5 @@
 *.vs
 *.pyc
 */downloaded_data/
-potentialSymbols.csv
+*/output_data/
+*/__pycache__/

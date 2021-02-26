@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>402d51b4-066d-4851-acd6-2887d6db6da3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>CrosStonks.py</StartupFile>
+    <StartupFile>LoadData.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CrosStonks.py" />
+    <Compile Include="LoadData.py" />
+    <Compile Include="GetStats.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Stonks.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="stonks-config.json" />

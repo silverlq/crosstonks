@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>402d51b4-066d-4851-acd6-2887d6db6da3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LoadData.py</StartupFile>
+    <StartupFile>GetStats.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

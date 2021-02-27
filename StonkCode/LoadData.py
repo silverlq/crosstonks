@@ -18,7 +18,7 @@ def Folder(f_name):
         os.makedirs(f_path)
     return f_path
 
-out_folder= Folder("output_data")
+out_folder= Folder(r"output_data\stonk_close")
 dl_folder = Folder("downloaded_data")
 outCsv = "stonksClose.csv"
 
@@ -30,7 +30,7 @@ symbolList = symbol_df.iloc[:,0].tolist()
 
 print("Loading symbol historical data...")
 fig, ax = plt.subplots()
-closeDF = None
+
 nSymbols = len(symbolList)
 percent = 0
 for num, symbol in enumerate(symbolList, start=1):
@@ -40,22 +40,10 @@ for num, symbol in enumerate(symbolList, start=1):
     percent = new_percent
     stonk = Stonk(symbol)
     stonk.Fetch(data_interval='1d')
-    #stonk.Setup()
-    #if stonk.potential:
+    
     if stonk.valid:
-        closeHist = stonk.GetCloseHist()
-        if closeDF is None:
-            closeDF = closeHist
-        else:
-            closeDF = closeDF.join(closeHist,how="outer")
-        #stonk.Plot(ax)
+        stonk.SaveCloseHist()
+
     #if num > 200:
     #    break
-
-#potential_df = pd.concat(closeDict).sort_index()
-#potential_df = pd.DataFrame.from_dict(closeDict)
-closeDF.to_csv(os.path.join(out_folder,outCsv))
-
-#leg = ax.legend()
-#ax.legend(loc='upper left', frameon=False)
-#plt.show()
+    

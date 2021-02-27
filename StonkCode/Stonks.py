@@ -59,11 +59,23 @@ class Stonk:
             self.close_df = pd.read_csv(in_file, index_col = 0, parse_dates = True, squeeze=True)
         else:
             self.valid = False
-
-    def Plot(self,ax):
+    def PrintInfo(self):
+        ticker = yf.Ticker(self.symbol)
+        info = ticker.info
+        print("{} ({:.2f} {}) | {}\n{}\n\n{}\n\n{}\n\n\n".format(
+            self.symbol,
+            self.close_df[-1],
+            info.get("currency"),
+            info.get('longName'),
+            info.get('sector'),
+            info.get('website'),
+            info.get('longBusinessSummary')))
+    def Plot(self,ax=None):
         if not self.valid:
             return
-        
-        #close_df.columns = [self.symbol]
-        ax.plot(self.close_df, label = self.symbol)
+        if ax is None:
+            plt.plot(self.close_df)
+        else:
+            #close_df.columns = [self.symbol]
+            ax.plot(self.close_df, label = self.symbol)
 

@@ -17,10 +17,10 @@ results_df = pd.DataFrame(dtype="float64")
 
 results_df['symbol'] = stats_df['Unnamed: 0']
 
-results_df["long_direction"]=stats_df["50%_lastMonth"]/stats_df["50%_2019"]
+results_df["long_direction"]=stats_df["75%_lastMonth"]/stats_df["75%_2019"]
 results_df["short_direction"]=stats_df["25%_lastMonth"]/stats_df["75%_last2Months"]
 results_df["current_vs_long"]=stats_df["last_close"]/stats_df["75%_2019"]
 results_df["std_last2Months"]=stats_df["std_last2Months"]
-results_df["rank"]=results_df["short_direction"]*results_df["short_direction"]/(results_df["current_vs_long"]*results_df["long_direction"]*results_df["std_last2Months"])
+results_df["rank"]=results_df["short_direction"]*results_df["short_direction"]/(results_df["current_vs_long"]*results_df["long_direction"])
 results_df.sort_values(["rank"],inplace=True, ascending=False)
 results_df.to_csv(out_data)

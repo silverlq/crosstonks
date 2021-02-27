@@ -1,5 +1,7 @@
 *.vs
 *.pyc
+*.txt
 */downloaded_data/
 */output_data/
 */__pycache__/
+Thumbs.db

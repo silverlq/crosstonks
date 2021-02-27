@@ -11,7 +11,6 @@ class Stonk:
     close_df = None
     valid = True
     filename= ""
-    potential = False
     stats = None
 
     def __init__(self, symbol):
@@ -62,7 +61,7 @@ class Stonk:
             self.valid = False
 
     def Plot(self,ax):
-        if not self.valid or not self.potential:
+        if not self.valid:
             return
         
         #close_df.columns = [self.symbol]

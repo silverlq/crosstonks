@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>402d51b4-066d-4851-acd6-2887d6db6da3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>GetStats.py</StartupFile>
+    <StartupFile>PlotTopStonks.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,12 @@
   <ItemGroup>
     <Compile Include="LoadData.py" />
     <Compile Include="GetStats.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlotTopStonks.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RankStonks.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Stonks.py">
